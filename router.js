@@ -1,9 +1,6 @@
-const express = require('express')
-const router = express.Router()
-
-router.post('/search', async(req, res)=>{
-    const body = req.body;
-    return res.status(200).json({success: true});
-});
-
+const express = require('express');
+const ctrl = require('./controllers.js');
+const router = express.Router();
+router.get('/', ctrl.getItems)
+router.post('/', ctrl.createItem);
 module.exports = router
